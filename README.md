@@ -1,6 +1,8 @@
 # Node Example API
 An example of a REST API using Node.js
 
+<br>
+
 :bulb: Install all packages of the `package.json` on your Node project. This will download everything you need.
 
 ```
