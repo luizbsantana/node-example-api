@@ -3,7 +3,7 @@ An example of a REST API using Node.js
 
 <br>
 
-## :download: Installing packages
+## :floppy_disk: Installing packages
 
 :bulb: Install all packages of the `package.json` on your Node project. This will download everything you need.
 
