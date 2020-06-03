@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const productsRoutes = require('./api/routes/products');
 const ordersRoutes = require('./api/routes/orders');
 
-mongoose.connect(`mongodb+srv://luizsantana:${process.env.MONGO_PWD}@mongodb-luizsantana-fowgl.azure.mongodb.net/test?authSource=admin&replicaSet=mongodb-luizsantana-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
