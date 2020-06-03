@@ -7,9 +7,10 @@ const mongoose = require('mongoose');
 const productsRoutes = require('./api/routes/products');
 const ordersRoutes = require('./api/routes/orders');
 
-mongoose.connect(`mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb://${process.env.MONGO_IP}:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
