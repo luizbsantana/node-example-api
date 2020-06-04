@@ -6,8 +6,9 @@ const mongoose = require('mongoose');
 
 const productsRoutes = require('./api/routes/products');
 const ordersRoutes = require('./api/routes/orders');
+const usersRoutes = require('./api/routes/users');
 
-mongoose.connect(`mongodb://${process.env.MONGO_IP}:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb://${process.env.MONGO_ADDRESS}/?readPreference=primary&appname=MongoDB%20Compass&ssl=false`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads'));
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 
 app.use('/products', productsRoutes);
 app.use('/orders', ordersRoutes);
+app.use('/users', usersRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found path');

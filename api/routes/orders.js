@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const checkAuth = require('../middleware/check-auth');
 
 const Order = require('../models/order');
 const Product = require('../models/product');
 
-router.get('/', (req, res, next) => {
+router.get('/', checkAuth, (req, res, next) => {
     Order
         .find()
         .select('_id product quantity')
@@ -22,7 +23,7 @@ router.get('/', (req, res, next) => {
         });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', checkAuth, (req, res, next) => {
     Product
         .findById(req.body.productId)
         .then(product => {
@@ -46,7 +47,7 @@ router.post('/', (req, res, next) => {
         });
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkAuth, (req, res, next) => {
     const id = req.params.id;
     Order
         .findById(id)
@@ -64,7 +65,7 @@ router.get('/:id', (req, res, next) => {
         });
 });
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', checkAuth, (req, res, next) => {
     const id = req.params.id;
     Product
         .remove({ _id: id })

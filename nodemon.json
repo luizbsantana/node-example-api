@@ -1,5 +1,6 @@
 {
     "env": {
-        "MONGO_IP": "localhost"
+        "MONGO_ADDRESS": "localhost:27017",
+        "JWT_KEY": "myjwtsecretkey"
     }
 }
