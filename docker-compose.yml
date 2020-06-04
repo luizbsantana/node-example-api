@@ -1,0 +1,17 @@
+version: '3'
+services: 
+    node-example-api:
+        image: lhsantana/node-example-api:v1
+        ports:
+            - 3000:3000
+        environment:
+            MONGO_ADDRESS: mongodb
+        depends_on: 
+            - mongodb
+        links: 
+            - mongodb
+
+    mongodb:
+        image: mongo
+        ports: 
+            - 27017:27017
