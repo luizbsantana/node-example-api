@@ -3,9 +3,19 @@ An example of a REST API using Node.js
 
 <br>
 
-## :floppy_disk: Installing packages
+## :whale: Running the server with Docker
 
-:bulb: Install all packages of the `package.json` on your Node project. This will download everything you need.
+:bulb: Install everything you need and run the server just typing the following command:
+
+```
+docker-compose up
+```
+
+<br>
+
+## :floppy_disk: Installing packages without Docker
+
+:bulb: Install all packages on your Node project typing the following command:
 
 ```
 npm install
@@ -13,9 +23,9 @@ npm install
 
 <br>
 
-## :computer: Running the server
+## :computer: Running the server without Docker
 
-:bulb: After all the dependencies have been installed, you can run the server just typing the following command:
+:bulb: After all the dependencies have been installed, you can run the server typing the following command:
 
 ```
 npm start
